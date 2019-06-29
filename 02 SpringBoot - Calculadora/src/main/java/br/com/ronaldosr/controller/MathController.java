@@ -6,10 +6,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ronaldosr.exception.OperacaoNaoSuportada;
+import br.com.ronaldosr.math.MathOper;
 import br.com.ronaldosr.utils.Conversor;
 
 @RestController
 public class MathController {
+	
+	/**
+	 * Criar instância de MathOper
+	 */
+	private MathOper mathOper = new MathOper();
 	
 	/**
 	 * Soma entre dois números
@@ -25,8 +31,7 @@ public class MathController {
 		if (!Conversor.isNumeric(parametroA) || !Conversor.isNumeric(parametroB)) {
 			throw new OperacaoNaoSuportada("Por favor, informe um valor numérico!");
 		}
-		Double resultado = Conversor.convertToDouble(parametroA) + Conversor.convertToDouble(parametroB);
-		return resultado;		
+		return mathOper.somar(Conversor.convertToDouble(parametroA), Conversor.convertToDouble(parametroB));
 	}
 	
 	/**
@@ -43,8 +48,7 @@ public class MathController {
 		if (!Conversor.isNumeric(parametroA) || !Conversor.isNumeric(parametroB)) {
 			throw new OperacaoNaoSuportada("Por favor, informe um valor numérico!");
 		}
-		Double resultado = Conversor.convertToDouble(parametroA) - Conversor.convertToDouble(parametroB);
-		return resultado;		
+		return mathOper.subtrair(Conversor.convertToDouble(parametroA), Conversor.convertToDouble(parametroB));		
 	}
 	
 	/**
@@ -61,8 +65,7 @@ public class MathController {
 		if (!Conversor.isNumeric(parametroA) || !Conversor.isNumeric(parametroB)) {
 			throw new OperacaoNaoSuportada("Por favor, informe um valor numérico!");
 		}
-		Double resultado = Conversor.convertToDouble(parametroA) * Conversor.convertToDouble(parametroB);
-		return resultado;		
+		return mathOper.multiplicar(Conversor.convertToDouble(parametroA), Conversor.convertToDouble(parametroB));
 	}
 	
 	/**
@@ -81,8 +84,7 @@ public class MathController {
 		if (Conversor.convertToDouble(parametroB) == 0D) {
 			throw new OperacaoNaoSuportada("Não é possível dividir por zero!");
 		}
-		Double resultado = Conversor.convertToDouble(parametroA) / Conversor.convertToDouble(parametroB);
-		return resultado;		
+		return mathOper.dividir(Conversor.convertToDouble(parametroA), Conversor.convertToDouble(parametroB));
 	}
 	
 	/**
@@ -98,8 +100,7 @@ public class MathController {
 		if (!Conversor.isNumeric(parametroA) || !Conversor.isNumeric(parametroB)) {
 			throw new OperacaoNaoSuportada("Por favor, informe um valor numérico!");
 		}
-		Double resultado = (Conversor.convertToDouble(parametroA) + Conversor.convertToDouble(parametroB))/2;
-		return resultado;		
+		return mathOper.media(Conversor.convertToDouble(parametroA), Conversor.convertToDouble(parametroB));
 	}
 	
 	/**
@@ -114,9 +115,8 @@ public class MathController {
 			           @PathVariable("parametroB") String parametroB) throws Exception {
 		if (!Conversor.isNumeric(parametroA) || !Conversor.isNumeric(parametroB)) {
 			throw new OperacaoNaoSuportada("Por favor, informe um valor numérico!");
-		}
-		Double resultado = Math.pow(Conversor.convertToDouble(parametroA), Conversor.convertToDouble(parametroB));
-		return resultado;		
+		}	
+		return mathOper.expoente(Conversor.convertToDouble(parametroA), Conversor.convertToDouble(parametroB));
 	}
 	
 	/**
@@ -130,8 +130,7 @@ public class MathController {
 		if (!Conversor.isNumeric(parametroA)) {
 			throw new OperacaoNaoSuportada("Por favor, informe um valor numérico!");
 		}
-		Double resultado = Math.sqrt(Conversor.convertToDouble(parametroA));
-		return resultado;		
+		return mathOper.raiz(Conversor.convertToDouble(parametroA));
 	}
 	
 }
