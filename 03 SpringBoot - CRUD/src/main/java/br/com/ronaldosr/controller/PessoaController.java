@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,4 +32,24 @@ public class PessoaController {
 	public Pessoa findById(@PathVariable("id") String id) {
 		return servico.findById(id);
 	}
+	
+	@RequestMapping(method = RequestMethod.POST,
+			        consumes = MediaType.APPLICATION_JSON_VALUE,
+			        produces  = MediaType.APPLICATION_JSON_VALUE)
+	public Pessoa novaPessoa(@RequestBody Pessoa pessoa)  {
+		return servico.novaPessoa(pessoa);
+	}
+	
+	@RequestMapping(method = RequestMethod.PUT,
+	        consumes = MediaType.APPLICATION_JSON_VALUE,
+	        produces  = MediaType.APPLICATION_JSON_VALUE)
+	public Pessoa atualizarPessoa(@RequestBody Pessoa pessoa)  {
+		return servico.atualizarPessoa(pessoa);
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public void excluirPessoa(@PathVariable("id") String id) {
+		servico.excluirPessoa(id);
+	}
+
 }

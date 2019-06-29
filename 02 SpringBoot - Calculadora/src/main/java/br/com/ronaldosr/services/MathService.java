@@ -1,6 +1,9 @@
-package br.com.ronaldosr.math;
+package br.com.ronaldosr.services;
 
-public class MathOper {
+import org.springframework.stereotype.Service;
+
+@Service
+public class MathService {
 
 	/**
 	 * Somar A+B

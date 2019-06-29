@@ -1,13 +1,16 @@
-package br.com.ronaldosr.utils;
+package br.com.ronaldosr.services;
 
-public class Conversor {
+import org.springframework.stereotype.Service;
+
+@Service
+public class ConversorService {
 	
 	/**
 	 * Converte string representando número para Double
 	 * @param strNumero
 	 * @return
 	 */
-	public static Double convertToDouble(String strNumero) {
+	public Double convertToDouble(String strNumero) {
 		if (strNumero == null) return 0D;
 		String numero = strNumero.replaceAll(",", ".");
 		if (isNumeric(numero)) return Double.parseDouble(numero);
@@ -19,7 +22,7 @@ public class Conversor {
 	 * @param strNumero
 	 * @return
 	 */
-	public static boolean isNumeric(String strNumero) {
+	public boolean isNumeric(String strNumero) {
 		if (strNumero == null) return false;
 		String numero = strNumero.replaceAll(",", ".");
 		return numero.matches("[-+]?[0-9]*\\.?[0-9]+");
