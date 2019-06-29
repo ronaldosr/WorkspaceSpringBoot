@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 @Table(name = "pessoa")
@@ -30,6 +33,15 @@ public class Pessoa implements Serializable {
 	
 	@Column(name = "sexo", nullable = false, length = 9)
 	private String sexo;
+	
+	@Column(name = "cpf")
+	@CPF
+	private String cpf;
+	
+	@Column(name = "email", length = 50)
+	@Email
+	private String email;
+	
 
 	public Pessoa() {
 	}
@@ -73,11 +85,29 @@ public class Pessoa implements Serializable {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
+	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((primeiroNome == null) ? 0 : primeiroNome.hashCode());
@@ -95,6 +125,16 @@ public class Pessoa implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Pessoa other = (Pessoa) obj;
+		if (cpf == null) {
+			if (other.cpf != null)
+				return false;
+		} else if (!cpf.equals(other.cpf))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
 		if (endereco == null) {
 			if (other.endereco != null)
 				return false;
@@ -118,7 +158,5 @@ public class Pessoa implements Serializable {
 		} else if (!sexo.equals(other.sexo))
 			return false;
 		return true;
-	}
-	
-	
+	}	
 }

@@ -43,6 +43,25 @@ public class PessoaService {
 	}
 	
 	/**
+	 * Encontra uma lista de Pessoas de acordo com o CPF
+	 * @param cpf
+	 * @return Lista<Pessoa>
+	 */
+	public List<Pessoa> findByCpf(String cpf) {
+		return pessoaRepository.findByCpf(cpf);
+	}
+	
+	/**
+	 * Encontra uma lista de Pessoas de acordo com o E-Mail
+	 * @param email
+	 * @return Lista<Pessoa>
+	 */
+	public Pessoa findByEmail(String email) {
+		return pessoaRepository.findByEmail(email)
+			   .orElseThrow(() -> new RecursoNaoDisponivelException("Não há registros para a chave informada!"));
+	}
+	
+	/**
 	 * Atualiza dos dados de uma Pessoa de acordo com o ID informado
 	 * @param pessoa
 	 * @return Pessoa Atualizada
@@ -54,6 +73,8 @@ public class PessoaService {
 		pessoaAtual.setSegundoNome(pessoa.getSegundoNome());
 		pessoaAtual.setEndereco(pessoa.getEndereco());
 		pessoaAtual.setSexo(pessoa.getSexo());
+		pessoaAtual.setCpf(pessoa.getCpf());
+		pessoaAtual.setEmail(pessoa.getEmail());
 		return pessoaRepository.save(pessoaAtual);
 	}
 	
@@ -66,4 +87,5 @@ public class PessoaService {
 				   .orElseThrow(() -> new RecursoNaoDisponivelException("Não há registros para a chave informada!"));
 		pessoaRepository.delete(pessoa);
 	}
+
 }

@@ -3,11 +3,14 @@ package br.com.ronaldosr.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ronaldosr.model.Pessoa;
@@ -18,37 +21,42 @@ import br.com.ronaldosr.services.PessoaService;
 public class PessoaController {
 	
 	@Autowired
-	private PessoaService servico;
+	private PessoaService pessoaService;
 	
-	@RequestMapping(method = RequestMethod.GET,
-			produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping
 	public List<Pessoa> findAll() {
-		return servico.findAll();
+		return pessoaService.findAll();
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET,
-			        produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping("/{id}")
 	public Pessoa findById(@PathVariable("id") Long id) {
-		return servico.findById(id);
+		return pessoaService.findById(id);
 	}
 	
-	@RequestMapping(method = RequestMethod.POST,
-			        consumes = MediaType.APPLICATION_JSON_VALUE,
-			        produces  = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping("/cpf/{cpf}")
+	public List<Pessoa> findByCpf(@PathVariable("cpf") String cpf) {
+		return pessoaService.findByCpf(cpf);
+	}
+	
+	@GetMapping("/email/{email}")
+	public Pessoa findByEmail(@PathVariable("email") String email) {
+		return pessoaService.findByEmail(email);
+	}
+	
+	@PostMapping
 	public Pessoa novaPessoa(@RequestBody Pessoa pessoa)  {
-		return servico.novaPessoa(pessoa);
+		return pessoaService.novaPessoa(pessoa);
 	}
 	
-	@RequestMapping(method = RequestMethod.PUT,
-	        consumes = MediaType.APPLICATION_JSON_VALUE,
-	        produces  = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping
 	public Pessoa atualizarPessoa(@RequestBody Pessoa pessoa)  {
-		return servico.atualizarPessoa(pessoa);
+		return pessoaService.atualizarPessoa(pessoa);
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public void excluirPessoa(@PathVariable("id") Long id) {
-		servico.excluirPessoa(id);
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> excluirPessoa(@PathVariable("id") Long id) {
+		pessoaService.excluirPessoa(id);
+		return ResponseEntity.ok().build();
 	}
 
 }
