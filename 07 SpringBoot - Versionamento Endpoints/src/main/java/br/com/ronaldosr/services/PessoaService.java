@@ -7,8 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import br.com.ronaldosr.converter.DozerConverter;
+import br.com.ronaldosr.converter.custom.PessoaConverter;
 import br.com.ronaldosr.data.model.Pessoa;
 import br.com.ronaldosr.data.vo.PessoaVO;
+import br.com.ronaldosr.data.vo.v2.PessoaVOV2;
 import br.com.ronaldosr.exception.RecursoNaoDisponivelException;
 import br.com.ronaldosr.repository.PessoaRepository;
 
@@ -18,8 +20,11 @@ public class PessoaService {
 	@Autowired
 	PessoaRepository pessoaRepository;
 	
+	@Autowired
+	PessoaConverter pessoaConverter;
+	
 	/**
-	 * Cria uma nova Pessoa
+	 * Cria uma nova Pessoa V1
 	 * @param pessoa
 	 * @return Pessoa
 	 */
@@ -30,6 +35,17 @@ public class PessoaService {
 		var vo = DozerConverter.parseObject(pessoaRepository.save(entity), PessoaVO.class);				
 		return vo;
 	}
+		
+	/**
+	 * Cria uma nova Pessoa V2
+	 * @param pessoa
+	 * @return Pessoa
+	 */
+	public PessoaVOV2 novaPessoaV2(PessoaVOV2 pessoa) {
+		var entity = pessoaConverter.converterVoEntidade(pessoa);
+		var vo = pessoaConverter.converterEntidadeVo(pessoaRepository.save(entity));				
+		return vo;
+	}
 	
 	/**
 	 * Listar todas as Pessoas cadastradas
@@ -38,6 +54,7 @@ public class PessoaService {
 	public List<PessoaVO> findAll(){
 		return DozerConverter.parseListObjects(pessoaRepository.findAll(), PessoaVO.class);
 	}
+
 	
 	/**
 	 * Encontra uma Pessoa para o ID informado
