@@ -11,6 +11,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import br.com.ronaldosr.exception.ExceptionResponse;
+import br.com.ronaldosr.exception.InvalidJwtAuthenticationException;
 import br.com.ronaldosr.exception.RecursoNaoDisponivelException;
 
 @RestController
@@ -30,6 +31,16 @@ public class CustomResponseExceptionHandler extends ResponseEntityExceptionHandl
 
 	@ExceptionHandler(RecursoNaoDisponivelException.class)
 	public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception ex, WebRequest request) {
+		ExceptionResponse exceptionResponse = 
+				new ExceptionResponse(
+						new Date(), 
+						ex.getMessage(), 
+						request.getDescription(false));
+		return new ResponseEntity<>(exceptionResponse, HttpStatus.BAD_REQUEST);
+	}
+	
+	@ExceptionHandler(InvalidJwtAuthenticationException.class)
+	public final ResponseEntity<ExceptionResponse> invalidJwtAuthenticationException(Exception ex, WebRequest request) {
 		ExceptionResponse exceptionResponse = 
 				new ExceptionResponse(
 						new Date(), 
