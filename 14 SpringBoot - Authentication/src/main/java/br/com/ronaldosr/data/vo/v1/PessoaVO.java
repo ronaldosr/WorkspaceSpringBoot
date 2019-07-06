@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.github.dozermapper.core.Mapping;
 
 // Ordenar os campos na serialização
-@JsonPropertyOrder({"id", "cpf","primeiro nome", "segundo nome", "sexo", "email"})
+@JsonPropertyOrder({"id", "cpf","primeiro nome", "segundo nome", "sexo", "email", "enabled"})
 public class PessoaVO extends ResourceSupport implements Serializable {
 
 	private static final long serialVersionUID = 4361422101325463244L;
@@ -33,6 +33,8 @@ public class PessoaVO extends ResourceSupport implements Serializable {
 	private String cpf;
     
 	private String email;
+	
+	private Boolean enabled;
 
 	public PessoaVO() {
 	}
@@ -93,12 +95,21 @@ public class PessoaVO extends ResourceSupport implements Serializable {
 		this.email = email;
 	}
 
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((enabled == null) ? 0 : enabled.hashCode());
 		result = prime * result + ((endereco == null) ? 0 : endereco.hashCode());
 		result = prime * result + (int) (key ^ (key >>> 32));
 		result = prime * result + ((primeiroNome == null) ? 0 : primeiroNome.hashCode());
@@ -125,6 +136,11 @@ public class PessoaVO extends ResourceSupport implements Serializable {
 			if (other.email != null)
 				return false;
 		} else if (!email.equals(other.email))
+			return false;
+		if (enabled == null) {
+			if (other.enabled != null)
+				return false;
+		} else if (!enabled.equals(other.enabled))
 			return false;
 		if (endereco == null) {
 			if (other.endereco != null)

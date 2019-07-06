@@ -20,8 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.ronaldosr.repository.UserRepository;
 import br.com.ronaldosr.security.AccountCredentialsVO;
 import br.com.ronaldosr.security.jwt.JwtTokenProvider;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+@Api(tags = "Endpoint Autenticação",
+     description = "Permite a autenticação de usuários.")
 @RestController
 @RequestMapping("/auth/")
 public class AuthController {

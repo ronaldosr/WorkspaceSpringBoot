@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.ronaldosr.converter.DozerConverter;
 import br.com.ronaldosr.data.model.Pessoa;
@@ -102,6 +103,15 @@ public class PessoaService {
 				   .orElseThrow(() -> new RecursoNaoDisponivelException("Não há registros para a chave informada!"));
 		pessoaRepository.delete(pessoa);
 		return ResponseEntity.ok().build();
+	}
+	
+	@Transactional
+	public PessoaVO desabilitarPessoa(Long id) {
+		pessoaRepository.desabilitarPessoa(id);
+		// Após o executa uma nova pesquisa na base e retorna o registro já alterado
+		var entity = pessoaRepository.findById(id)
+			         .orElseThrow(() -> new RecursoNaoDisponivelException("Não há registros para a chave informada!"));
+		return DozerConverter.parseObject(entity, PessoaVO.class);
 	}
 
 }

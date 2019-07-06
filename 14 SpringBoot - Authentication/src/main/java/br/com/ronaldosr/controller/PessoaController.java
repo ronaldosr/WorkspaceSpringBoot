@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -101,6 +102,14 @@ public class PessoaController {
 	public ResponseEntity<?> excluirPessoa(@PathVariable("id") Long id) {
 		pessoaService.excluirPessoa(id);
 		return ResponseEntity.ok().build();
+	}
+	
+	@ApiOperation(value = "Desabilita uma pessoa na base de dados.")
+	@PatchMapping(value = "/{id}", produces = {"application/json", "application/xml", "application/x-yaml"})
+	public PessoaVO desabilitarPessoa(@PathVariable("id") Long id) {
+		PessoaVO pessoaVO = pessoaService.desabilitarPessoa(id);
+		pessoaVO.add(linkTo(methodOn(PessoaController.class).findById(id)).withSelfRel());
+		return pessoaVO;
 	}
 
 }

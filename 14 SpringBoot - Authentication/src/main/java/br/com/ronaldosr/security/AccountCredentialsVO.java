@@ -7,6 +7,7 @@ public class AccountCredentialsVO implements Serializable{
 	private static final long serialVersionUID = -5710174595478592142L;
 
 	private String username;
+	
 	private String password;
 	
 	public String getUsername() {
@@ -26,8 +27,8 @@ public class AccountCredentialsVO implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		return result;
 	}
 	@Override
@@ -39,16 +40,20 @@ public class AccountCredentialsVO implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		AccountCredentialsVO other = (AccountCredentialsVO) obj;
-		if (password == null) {
-			if (other.password != null)
-				return false;
-		} else if (!password.equals(other.password))
-			return false;
 		if (username == null) {
 			if (other.username != null)
 				return false;
 		} else if (!username.equals(other.username))
 			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
 		return true;
 	}
+
+	
+	
+
 }
