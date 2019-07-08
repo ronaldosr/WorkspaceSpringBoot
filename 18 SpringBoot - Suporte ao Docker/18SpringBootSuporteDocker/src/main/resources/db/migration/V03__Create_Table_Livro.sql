@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS livro (
+	id bigint (20) NOT NULL AUTO_INCREMENT,
+	autor VARCHAR(180) NOT NULL,
+	data_publicacao DATE NOT NULL,
+	preco DECIMAL(19, 2) NOT NULL,
+	titulo VARCHAR(250) NOT NULL,
+	PRIMARY KEY(id)
+) ENGINE=InnoDB;

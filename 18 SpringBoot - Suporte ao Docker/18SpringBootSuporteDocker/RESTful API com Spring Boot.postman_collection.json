@@ -1,0 +1,2966 @@
+{
+	"info": {
+		"_postman_id": "d2c14b08-f0c9-4e2d-ae50-d7cdc6a020d8",
+		"name": "RESTful API com Spring Boot",
+		"description": "API desenvolvida no curso.\n\nContact Support: \n{\n\nName : Ronaldo Rodrigues\n\nEmail : ronaldosr@gmail.com\n\n}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "livro",
+					"item": [
+						{
+							"name": "v1",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Retorna os dados de um livro.",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearer_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "id"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n \"autor\": \"<string>\",\n \"data publicacao\": \"<dateTime>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"preco\": \"<number>\",\n \"titulo\": \"<string>\"\n}"
+												},
+												{
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Exclui um livro da base de dados.",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearer_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "id"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<object>"
+												},
+												{
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "No Content",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/livro/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"livro",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Retorna uma lista com todos os livros cadastrados na base.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/livro/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"livro",
+												"v1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n {\n  \"autor\": \"<string>\",\n  \"data publicacao\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"preco\": \"<number>\",\n  \"titulo\": \"<string>\"\n },\n {\n  \"autor\": \"<string>\",\n  \"data publicacao\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"preco\": \"<number>\",\n  \"titulo\": \"<string>\"\n }\n]"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Grava um novo livro na base de dados.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/livro/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"livro",
+												"v1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"autor\": \"<string>\",\n \"data publicacao\": \"<dateTime>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"preco\": \"<number>\",\n \"titulo\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Atualiza um livro na base de dados.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/livro/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"livro",
+												"v1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"autor\": \"<string>\",\n \"data publicacao\": \"<dateTime>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"preco\": \"<number>\",\n \"titulo\": \"<string>\"\n}"
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"autor\": \"<string>\",\n    \"data publicacao\": \"<dateTime>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"preco\": \"<number>\",\n    \"titulo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Retorna uma lista de livros de acordo com o autor.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/livro/v1/autor/:autor",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"livro",
+												"v1",
+												"autor",
+												":autor"
+											],
+											"variable": [
+												{
+													"key": "autor",
+													"value": "<string>",
+													"description": "autor"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/autor/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"autor",
+														"<string>"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/autor/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"autor",
+														"<string>"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/autor/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"autor",
+														"<string>"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/autor/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"autor",
+														"<string>"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n {\n  \"autor\": \"<string>\",\n  \"data publicacao\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"preco\": \"<number>\",\n  \"titulo\": \"<string>\"\n },\n {\n  \"autor\": \"<string>\",\n  \"data publicacao\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"preco\": \"<number>\",\n  \"titulo\": \"<string>\"\n }\n]"
+										}
+									]
+								},
+								{
+									"name": "Retorna uma lista de livros de acordo com o Título.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/livro/v1/titulo/:titulo",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"livro",
+												"v1",
+												"titulo",
+												":titulo"
+											],
+											"variable": [
+												{
+													"key": "titulo",
+													"value": "<string>",
+													"description": "titulo"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/titulo/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"titulo",
+														"<string>"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/titulo/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"titulo",
+														"<string>"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n {\n  \"autor\": \"<string>\",\n  \"data publicacao\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"preco\": \"<number>\",\n  \"titulo\": \"<string>\"\n },\n {\n  \"autor\": \"<string>\",\n  \"data publicacao\": \"<dateTime>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"preco\": \"<number>\",\n  \"titulo\": \"<string>\"\n }\n]"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/titulo/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"titulo",
+														"<string>"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/livro/v1/titulo/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"livro",
+														"v1",
+														"titulo",
+														"<string>"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "pessoa",
+					"item": [
+						{
+							"name": "v1",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Retorna os dados de uma pessoa.",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearer_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "id"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n \"cpf\": \"<string>\",\n \"email\": \"<string>\",\n \"enabled\": \"<boolean>\",\n \"endereco\": \"<string>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"primeiro nome\": \"<string>\",\n \"segundo nome\": \"<string>\",\n \"sexo\": \"<string>\"\n}"
+												},
+												{
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Exclui uma pessoa da base de dados.",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearer_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "id"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "<object>"
+												},
+												{
+													"name": "No Content",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Desabilita uma pessoa na base de dados.",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{bearer_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<long>",
+															"description": "id"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Unauthorized",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Forbidden",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n \"cpf\": \"<string>\",\n \"email\": \"<string>\",\n \"enabled\": \"<boolean>\",\n \"endereco\": \"<string>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"primeiro nome\": \"<string>\",\n \"segundo nome\": \"<string>\",\n \"sexo\": \"<string>\"\n}"
+												},
+												{
+													"name": "No Content",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/pessoa/v1/<long>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"pessoa",
+																"v1",
+																"<long>"
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain"
+														}
+													],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Retorna uma lista com todas as pessoas cadastradas na base.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pessoa/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pessoa",
+												"v1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n {\n  \"cpf\": \"<string>\",\n  \"email\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"primeiro nome\": \"<string>\",\n  \"segundo nome\": \"<string>\",\n  \"sexo\": \"<string>\"\n },\n {\n  \"cpf\": \"<string>\",\n  \"email\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"primeiro nome\": \"<string>\",\n  \"segundo nome\": \"<string>\",\n  \"sexo\": \"<string>\"\n }\n]"
+										}
+									]
+								},
+								{
+									"name": "Grava uma nova pessoa na base de dados.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/pessoa/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pessoa",
+												"v1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"cpf\": \"<string>\",\n \"email\": \"<string>\",\n \"enabled\": \"<boolean>\",\n \"endereco\": \"<string>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"primeiro nome\": \"<string>\",\n \"segundo nome\": \"<string>\",\n \"sexo\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Atualiza uma pessoa na base de dados.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/pessoa/v1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pessoa",
+												"v1"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"cpf\": \"<string>\",\n \"email\": \"<string>\",\n \"enabled\": \"<boolean>\",\n \"endereco\": \"<string>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"primeiro nome\": \"<string>\",\n \"segundo nome\": \"<string>\",\n \"sexo\": \"<string>\"\n}"
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"cpf\": \"<string>\",\n    \"email\": \"<string>\",\n    \"enabled\": \"<boolean>\",\n    \"endereco\": \"<string>\",\n    \"id\": \"<long>\",\n    \"links\": [\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        },\n        {\n            \"deprecation\": \"<string>\",\n            \"href\": \"<string>\",\n            \"hreflang\": \"<string>\",\n            \"media\": \"<string>\",\n            \"rel\": \"<string>\",\n            \"templated\": \"<boolean>\",\n            \"title\": \"<string>\",\n            \"type\": \"<string>\"\n        }\n    ],\n    \"primeiro nome\": \"<string>\",\n    \"segundo nome\": \"<string>\",\n    \"sexo\": \"<string>\"\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Retorna os dados de uma pessoa de acordo com o CPF.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pessoa/v1/cpf/:cpf",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pessoa",
+												"v1",
+												"cpf",
+												":cpf"
+											],
+											"variable": [
+												{
+													"key": "cpf",
+													"value": "<string>",
+													"description": "cpf"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/cpf/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"cpf",
+														"<string>"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/cpf/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"cpf",
+														"<string>"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/cpf/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"cpf",
+														"<string>"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "[\n {\n  \"cpf\": \"<string>\",\n  \"email\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"primeiro nome\": \"<string>\",\n  \"segundo nome\": \"<string>\",\n  \"sexo\": \"<string>\"\n },\n {\n  \"cpf\": \"<string>\",\n  \"email\": \"<string>\",\n  \"enabled\": \"<boolean>\",\n  \"endereco\": \"<string>\",\n  \"id\": \"<long>\",\n  \"links\": [\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   },\n   {\n    \"deprecation\": \"<string>\",\n    \"href\": \"<string>\",\n    \"hreflang\": \"<string>\",\n    \"media\": \"<string>\",\n    \"rel\": \"<string>\",\n    \"templated\": \"<boolean>\",\n    \"title\": \"<string>\",\n    \"type\": \"<string>\"\n   }\n  ],\n  \"primeiro nome\": \"<string>\",\n  \"segundo nome\": \"<string>\",\n  \"sexo\": \"<string>\"\n }\n]"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/cpf/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"cpf",
+														"<string>"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Retorna os dados de uma pessoa de acordo com o e-mail.",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{bearer_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/pessoa/v1/email/:email",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"pessoa",
+												"v1",
+												"email",
+												":email"
+											],
+											"variable": [
+												{
+													"key": "email",
+													"value": "<string>",
+													"description": "email"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/email/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"email",
+														"<string>"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/email/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"email",
+														"<string>"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/email/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"email",
+														"<string>"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/pessoa/v1/email/<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"pessoa",
+														"v1",
+														"email",
+														"<string>"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"cpf\": \"<string>\",\n \"email\": \"<string>\",\n \"enabled\": \"<boolean>\",\n \"endereco\": \"<string>\",\n \"id\": \"<long>\",\n \"links\": [\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  },\n  {\n   \"deprecation\": \"<string>\",\n   \"href\": \"<string>\",\n   \"hreflang\": \"<string>\",\n   \"media\": \"<string>\",\n   \"rel\": \"<string>\",\n   \"templated\": \"<boolean>\",\n   \"title\": \"<string>\",\n   \"type\": \"<string>\"\n  }\n ],\n \"primeiro nome\": \"<string>\",\n \"segundo nome\": \"<string>\",\n \"sexo\": \"<string>\"\n}"
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Autenticação de usuário de acordo com credenciais.",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "56748b63-f71c-484c-81bf-0f6ba5a05049",
+						"exec": [
+							"if (responseCode.code >= 200 && responseCode.code <= 299) {",
+							"    var jsonData = JSON.parse(responseBody);",
+							"//    postman.setEnvironmentVariable('bearer_token', jsonData.token);",
+							"    pm.environment.set(\"bearer_token\", jsonData.token);",
+							"",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Forbidden",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "\"<object>\""
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"<string>\",\n    \"username\": \"<string>\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9164c56a-af06-4cbc-aa12-00fbda191020",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9e165ce8-6862-4432-8510-199f526adb5b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5bd4c3c7-8975-4d21-b20d-6e3556f7cd44",
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

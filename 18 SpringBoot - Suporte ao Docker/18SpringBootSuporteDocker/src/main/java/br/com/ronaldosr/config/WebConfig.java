@@ -1,0 +1,68 @@
+package br.com.ronaldosr.config;
+
+import java.util.List;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import br.com.ronaldosr.serialization.converter.YamlJackson2HttpMessageConverter;
+
+@Configuration
+public class WebConfig implements WebMvcConfigurer{
+
+	private static final MediaType MEDIA_TYPE_YML = MediaType.valueOf("application/x-yaml");
+	
+	@Override
+	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+		converters.add(new YamlJackson2HttpMessageConverter());
+	}
+	
+	// Permite CROSS DOMAIN para todos os endpoints
+	// OBSERVAÇÃO: Se o método allowedMethods não estiver habilitado, anula 
+	// o acesso aos verbos PATCH, OPTIONS, HEAD, TRACE, CONNECT
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+		.allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
+	}
+	
+	@Override
+	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+		/* Via EXTENSION: 
+		 * localhost:8080/pessoa.xml
+		 * lcoalhost:8080/pessoa.json
+		 * 
+		 * configurer.favorParameter(false) .ignoreAcceptHeader(false)
+		 * .defaultContentType(MediaType.APPLICATION_JSON) .mediaType("json",
+		 * MediaType.APPLICATION_JSON) .mediaType("xml", MediaType.APPLICATION_XML);
+		 */
+		
+		/* Via QUERY PARAM:
+		 * localhost:8080/pessoa?mediaType=xml
+		 * localhost:8080/pessoa?mediaType=json
+		 * 
+		 * configurer.favorParameter(true) .parameterName("mediaType")
+		 * .favorPathExtension(false) .ignoreAcceptHeader(true)
+		 * .useRegisteredExtensionsOnly(false)
+		 * .defaultContentType(MediaType.APPLICATION_JSON) .mediaType("json",
+		 * MediaType.APPLICATION_JSON) .mediaType("xml", MediaType.APPLICATION_XML);
+		 */
+		
+		/*
+		 * Via HEADER
+		 */
+		configurer.favorPathExtension(false)
+		.favorParameter(false)
+		.ignoreAcceptHeader(false)
+		.useRegisteredExtensionsOnly(false)
+		.defaultContentType(MediaType.APPLICATION_JSON)
+		.mediaType("json", MediaType.APPLICATION_JSON)
+		.mediaType("xml", MediaType.APPLICATION_XML)
+		.mediaType("x-yaml", MEDIA_TYPE_YML);		 
+	}
+
+}
