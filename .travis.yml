@@ -1,0 +1,18 @@
+language: bash
+services: docker
+before_install:
+  - cd 18\ SpringBoot\ -\ Suporte\ ao\ Docker/
+  - echo "Dentro da pasta do docker..."
+script:
+  - docker-compose build
+before_deploy:
+  - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --passowrd-stdin
+deploy:
+  provider: script
+  script:
+    docker push ronaldosr/springboot-curso;
+    docker push ronaldosr/mysql-curso;
+  on:
+    branch: master
+notifications:
+  email: false    
